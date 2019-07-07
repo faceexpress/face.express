@@ -2,7 +2,7 @@
   "name": "create-next-example-app",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export && mv out public",
+    "build": "next build && next export",
     "start": "next start"
   },
   "dependencies": {

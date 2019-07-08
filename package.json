@@ -1,0 +1,18 @@
+{
+  "name": "faceexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve-lambdas": "netlify-lambda serve lambdas -p 5335",
+    "build-lambdas": "netlify-lambda build lambdas"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "face-recognition": "^0.9.3"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^1.5.0"
+  }
+}

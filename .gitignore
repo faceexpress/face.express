@@ -1,0 +1,6 @@
+# node / npm
+node_modules
+.next
+*.log
+# compiled functions
+lambdas/compiled/

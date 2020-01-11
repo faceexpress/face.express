@@ -22,6 +22,7 @@ fs.readdir(imagesDirectory, function(err, imagesPaths){
       faces,
       imagesWithModel = []
   imagesPaths.forEach(function(imagePath) {
+    if (imagePath.charAt(0) == '.') return
     image = fr.loadImage(imagesDirectory + '/' + imagePath)
     faces = detector.detectFaces(image)
 
@@ -32,6 +33,12 @@ fs.readdir(imagesDirectory, function(err, imagesPaths){
           file: imagePath,
           distance: prediction.distance
         })
+        // destination.txt will be created or overwritten by default.
+        fs.copyFile(imagesDirectory+'/'+imagePath, __dirname + '/result/'+imagePath, (err) => {
+          if (err) throw err;
+          console.log(imagePath + ' was copied to result folder');
+        });
+
       }
     })
   });
